@@ -1,0 +1,1059 @@
+<div class="dialog largedialog characterviewer" style="display: block; background-color: white"></div>
+
+<div>
+    <button type="action" name="act_character" >Character</button>
+    <button type="action" name="act_journal" >Journal</button>
+    <button type="action" name="act_npc" >NPC</button>
+</div>
+<input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
+
+<div class='sheet-character'>
+<div class="sheet-wrapper">
+
+<div class="image-container">
+    <img src="https://magicandmayhem.org/wp-content/uploads/2025/02/knave-character-sheet-scaled.jpg" alt="Background Image">
+    
+    <!-- Inputs on top of the image -->
+    <div class="input-overlay" style="top: 54px; left: 54px;">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 93px; left: 69px;" class="no-spinner" name="attr_str">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Strength}} {{roll=[[1d20 + @{str}]]}}" style="position: absolute; left: 24px; top: 97px;"></button>
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 154px; left: 69px;" class="no-spinner" name="attr_dex">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Dexterity}} {{roll=[[1d20 + @{dex}]]}}" style="position: absolute; left: 24px; top: 158px;"></button>
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 215px; left: 69px;" class="no-spinner" name="attr_con">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Constitution}} {{roll=[[1d20 + @{con}]]}}" style="position: absolute; left: 24px; top: 219px;"></button>    
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 275px; left: 69px;" class="no-spinner" name="attr_int">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Intelligence}} {{roll=[[1d20 + @{int}]]}}" style="position: absolute; left: 24px; top: 279px;"></button>
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 337px; left: 69px;" class="no-spinner" name="attr_wis">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Wisdom}} {{roll=[[1d20 + @{wis}]]}}" style="position: absolute; left: 24px; top: 340px;"></button>
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 396px; left: 69px;" class="no-spinner" name="attr_cha">
+      <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=Charisma}} {{roll=[[1d20 + @{cha}]]}}" style="position: absolute; left: 24px; top: 400px;"></button>
+    
+      <!--invisible text boxes -->
+      
+      <input type="text" style="position: absolute; top: -3px; left: 350px; width: 270px; border: none; background: transparent;" class="custom-input;" name="attr_character_name">
+      <input type="text" style="position: absolute; top: 33px; left: 360px; width: 270px; border: none; background: transparent;" class="custom-input;" name="attr_careers">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 91px; left: 294px;" class="no-spinner" name="attr_ac">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 91px; left: 340px;" class="no-spinner" name="attr_ap">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 93px; left: 412px;" class="no-spinner" name="attr_level">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 100px; position: absolute; top: 93px; left: 475px;" class="no-spinner" name="attr_xp">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 50px; position: absolute; top: 163px; left: 294px;" class="no-spinner" name="attr_hp_max">
+      <input type="number" style="background: transparent; border: none; outline: none; width: 40px; position: absolute; top: 228px; left: 299px;" class="no-spinner" name="attr_current_hp">
+      
+      
+      <!-- slots -->
+      
+      <input type="text" style="position: absolute; top: 470px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot1">
+      <input type="text" style="position: absolute; top: 512px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot2">
+      <input type="text" style="position: absolute; top: 554px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot3">
+      <input type="text" style="position: absolute; top: 596px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot4">
+      <input type="text" style="position: absolute; top: 638px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot5">
+      <input type="text" style="position: absolute; top: 680px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot6">
+      <input type="text" style="position: absolute; top: 722px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot7">
+      <input type="text" style="position: absolute; top: 764px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot8">
+      <input type="text" style="position: absolute; top: 806px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot9">
+      <input type="text" style="position: absolute; top: 848px; left: 85px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot10">
+      <input type="text" style="position: absolute; top: 470px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot11">
+      <input type="text" style="position: absolute; top: 512px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot12">
+      <input type="text" style="position: absolute; top: 554px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot13">
+      <input type="text" style="position: absolute; top: 596px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot14">
+      <input type="text" style="position: absolute; top: 638px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot15">
+      <input type="text" style="position: absolute; top: 680px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot16">
+      <input type="text" style="position: absolute; top: 722px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot17">
+      <input type="text" style="position: absolute; top: 764px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot18">
+      <input type="text" style="position: absolute; top: 806px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot19">
+      <input type="text" style="position: absolute; top: 848px; left: 380px; width: 240px; border: none; background: transparent;" class="custom-input;" name="attr_slot20">
+      
+      
+     <!--weapons-->
+     
+     <input type="text" style="position: absolute; top: 190px; left: 360px; width: 120px;" class="custom-input2" name="attr_weapon1">
+     <button type="roll" name="roll_example" value="&{template:default} {{name=@{weapon1}}} {{To Hit=[[1d20 + @{mainstat1}]]}}" style="position: absolute; left: 480px; top: 191px;"></button>
+     <div class="select1">
+                            <select style="width: 65px; font-size: 16px" name="attr_mainstat1">
+                        <option value="@{str}">STR</option>
+                        <option value="@{dex}">DEX</option>
+                        <option value="@{con}">CON</option>
+                        <option value="@{wis}">WIS</option>
+                        <option value="@{int}">INT</option>
+                        <option value="@{cha}">CHA</option>
+                            </select>
+                        </div>
+     <div class="select2">
+                            <select style="width: 65px; font-size: 16px" name="attr_weapondmg1">
+                        <option value="1d2">1d2</option>
+                        <option value="1d4">1d4</option>
+                        <option value="1d6">1d6</option>
+                        <option value="1d8">1d8</option>
+                        <option value="1d10">1d10</option>
+                            </select>
+                        </div>
+     <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=@{weapon1}}} {{Damage=[[@{weapondmg1}]]}}" style="position: absolute; left: 645px; top: 191px;"></button>
+     
+     <input type="text" style="position: absolute; top: 230px; left: 360px; width: 120px;" class="custom-input2" name="attr_weapon2">
+     <button type="roll" name="roll_example" value="&{template:default} {{name=@{weapon2}}} {{To Hit=[[1d20 + @{mainstat2}]]}}" style="position: absolute; left: 480px; top: 231px;"></button>
+     <div class="select3">
+                            <select style="width: 65px; font-size: 16px" name="attr_mainstat2">
+                        <option value="@{str}">STR</option>
+                        <option value="@{dex}">DEX</option>
+                        <option value="@{con}">CON</option>
+                        <option value="@{wis}">WIS</option>
+                        <option value="@{int}">INT</option>
+                        <option value="@{cha}">CHA</option>
+                            </select>
+                        </div>
+     <div class="select4">
+                            <select style="width: 65px; font-size: 16px" name="attr_weapondmg2">
+                        <option value="1d2">1d2</option>
+                        <option value="1d4">1d4</option>
+                        <option value="1d6">1d6</option>
+                        <option value="1d8">1d8</option>
+                        <option value="1d10">1d10</option>
+                            </select>
+                        </div>
+     <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=@{weapon2}}} {{Damage=[[@{weapondmg2}]]}}" style="position: absolute; left: 645px; top: 231px;"></button>
+     
+     <input type="text" style="position: absolute; top: 270px; left: 360px; width: 120px;" class="custom-input2" name="attr_weapon3">
+     <button type="roll" name="roll_example" value="&{template:default} {{name=@{weapon3}}} {{To Hit=[[1d20 + @{mainstat3}]]}}" style="position: absolute; left: 480px; top: 271px;"></button>
+     <div class="select5">
+                            <select style="width: 65px; font-size: 16px" name="attr_mainstat3">
+                        <option value="@{str}">STR</option>
+                        <option value="@{dex}">DEX</option>
+                        <option value="@{con}">CON</option>
+                        <option value="@{wis}">WIS</option>
+                        <option value="@{int}">INT</option>
+                        <option value="@{cha}">CHA</option>
+                            </select>
+                        </div>
+     <div class="select6">
+                            <select style="width: 65px; font-size: 16px" name="attr_weapondmg3">
+                        <option value="1d2">1d2</option>
+                        <option value="1d4">1d4</option>
+                        <option value="1d6">1d6</option>
+                        <option value="1d8">1d8</option>
+                        <option value="1d10">1d10</option>
+                            </select>
+                        </div>
+     <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=@{weapon3}}} {{Damage=[[@{weapondmg3}]]}}" style="position: absolute; left: 645px; top: 271px;"></button>
+     
+     <input type="text" style="position: absolute; top: 310px; left: 360px; width: 120px;" class="custom-input2" name="attr_weapon4">
+     <button type="roll" name="roll_example" value="&{template:default} {{name=@{weapon4}}} {{To Hit=[[1d20 + @{mainstat4}]]}}" style="position: absolute; left: 480px; top: 311px;"></button>
+     <div class="select7">
+                            <select style="width: 65px; font-size: 16px" name="attr_mainstat4">
+                        <option value="@{str}">STR</option>
+                        <option value="@{dex}">DEX</option>
+                        <option value="@{con}">CON</option>
+                        <option value="@{wis}">WIS</option>
+                        <option value="@{int}">INT</option>
+                        <option value="@{cha}">CHA</option>
+                            </select>
+                        </div>
+     <div class="select8">
+                            <select style="width: 65px; font-size: 16px" name="attr_weapondmg4">
+                        <option value="1d2">1d2</option>
+                        <option value="1d4">1d4</option>
+                        <option value="1d6">1d6</option>
+                        <option value="1d8">1d8</option>
+                        <option value="1d10">1d10</option>
+                            </select>
+                        </div>
+     <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=@{weapon4}}} {{Damage=[[@{weapondmg4}]]}}" style="position: absolute; left: 645px; top: 311px;"></button>
+     
+     <input type="text" style="position: absolute; top: 350px; left: 360px; width: 120px;" class="custom-input2" name="attr_weapon5">
+     <button type="roll" name="roll_example" value="&{template:default} {{name=@{weapon5}}} {{To Hit=[[1d20 + @{mainstat5}]]}}" style="position: absolute; left: 480px; top: 351px;"></button>
+     <div class="select9">
+                            <select style="width: 65px; font-size: 16px" name="attr_mainstat5">
+                        <option value="@{str}">STR</option>
+                        <option value="@{dex}">DEX</option>
+                        <option value="@{con}">CON</option>
+                        <option value="@{wis}">WIS</option>
+                        <option value="@{int}">INT</option>
+                        <option value="@{cha}">CHA</option>
+                            </select>
+                        </div>
+     <div class="select10">
+                            <select style="width: 65px; font-size: 16px" name="attr_weapondmg5">
+                        <option value="1d2">1d2</option>
+                        <option value="1d4">1d4</option>
+                        <option value="1d6">1d6</option>
+                        <option value="1d8">1d8</option>
+                        <option value="1d10">1d10</option>
+                            </select>
+                        </div>
+     <button type="roll" class="invisible-roll" name="roll_example" value="&{template:default} {{name=@{weapon5}}} {{Damage=[[@{weapondmg5}]]}}" style="position: absolute; left: 645px; top: 351px;"></button>
+     
+    <textarea name="attr_notes1" style="position: absolute; left: 65px; top: 920px; width: 550px;"></textarea>
+    <label style="position: absolute; top: 900px; left: 65px; background: transparent; border: none;">Notes</label>
+     
+    </div>
+</div>
+
+
+
+
+ </div>
+</div>
+
+
+<div class='sheet-journal'>
+
+  <div class="sheet-slots">
+
+        <span class="sheet-slots-title">Equipment Slots (For Additional Storage Mule/Cart etc.)
+
+       </span>
+
+ 
+
+        <span class="sheet-slot2">
+
+         &nbsp;1:&nbsp;<input class="sheet-contents" type="text" name="attr_item_1_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_1_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          41:<input class="sheet-contents"  type="text" name="attr_item_41_desc" value=""/>
+
+           <input class="sheet-quality" type="text" name="attr_item_41_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;2:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_2_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_2_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+         42:<input class="sheet-contents"  type="text" name="attr_item_42_desc" value=""/>
+
+         <input class="sheet-quality" type="text" name="attr_item_42_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;3:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_3_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_3_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          43:<input class="sheet-contents"  type="text" name="attr_item_43_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_43_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;4:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_4_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_4_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          44:<input class="sheet-contents"  type="text" name="attr_item_44_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_44_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;5:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_5_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_5_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          45:<input class="sheet-contents"  type="text" name="attr_item_45_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_45_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;6:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_6_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_6_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          46:<input class="sheet-contents"  type="text" name="attr_item_46_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_46_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;7:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_7_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_7_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          47:<input class="sheet-contents"  type="text" name="attr_item_47_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_47_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;8:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_8_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_8_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          48:<input class="sheet-contents"  type="text" name="attr_item_48_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_48_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;9:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_9_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_9_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          49:<input class="sheet-contents"  type="text" name="attr_item_49_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_49_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          10:<input class="sheet-contents"  type="text" name="attr_item_10_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_10_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          50:<input class="sheet-contents"  type="text" name="attr_item_50_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_50_qual" value=""/>
+
+        </span>
+        <span class="sheet-slot2">
+
+         &nbsp;11:&nbsp;<input class="sheet-contents" type="text" name="attr_item_11_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_11_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          51:<input class="sheet-contents"  type="text" name="attr_item_51_desc" value=""/>
+
+           <input class="sheet-quality" type="text" name="attr_item_51_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;12:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_12_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_12_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+         52:<input class="sheet-contents"  type="text" name="attr_item_52_desc" value=""/>
+
+         <input class="sheet-quality" type="text" name="attr_item_52_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;13:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_13_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_13_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          53:<input class="sheet-contents"  type="text" name="attr_item_53_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_53_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;14:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_14_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_14_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          54:<input class="sheet-contents"  type="text" name="attr_item_54_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_54_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;15:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_15_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_15_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          55:<input class="sheet-contents"  type="text" name="attr_item_55_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_55_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;16:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_16_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_16_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          56:<input class="sheet-contents"  type="text" name="attr_item_56_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_56_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;17:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_17_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_17_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          57:<input class="sheet-contents"  type="text" name="attr_item_57_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_57_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;18:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_18_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_18_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          58:<input class="sheet-contents"  type="text" name="attr_item_58_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_58_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;19:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_19_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_19_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          59:<input class="sheet-contents"  type="text" name="attr_item_59_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_59_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          20:<input class="sheet-contents"  type="text" name="attr_item_20_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_20_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          60:<input class="sheet-contents"  type="text" name="attr_item_60_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_60_qual" value=""/>
+
+        </span>
+<span class="sheet-slot2">
+
+         &nbsp;21:&nbsp;<input class="sheet-contents" type="text" name="attr_item_21_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_21_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          61:<input class="sheet-contents"  type="text" name="attr_item_61_desc" value=""/>
+
+           <input class="sheet-quality" type="text" name="attr_item_61_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;22:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_22_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_22_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+         62:<input class="sheet-contents"  type="text" name="attr_item_62_desc" value=""/>
+
+         <input class="sheet-quality" type="text" name="attr_item_62_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;23:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_23_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_23_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          63:<input class="sheet-contents"  type="text" name="attr_item_63_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_63_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;24:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_24_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_24_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          64:<input class="sheet-contents"  type="text" name="attr_item_64_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_64_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;25:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_25_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_25_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          65:<input class="sheet-contents"  type="text" name="attr_item_65_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_65_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;26:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_26_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_26_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          66:<input class="sheet-contents"  type="text" name="attr_item_66_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_66_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;27:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_27_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_27_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          67:<input class="sheet-contents"  type="text" name="attr_item_67_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_67_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;28:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_28_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_28_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          68:<input class="sheet-contents"  type="text" name="attr_item_68_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_68_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;29:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_29_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_29_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          69:<input class="sheet-contents"  type="text" name="attr_item_69_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_69_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          30:<input class="sheet-contents"  type="text" name="attr_item_30_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_30_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          70:<input class="sheet-contents"  type="text" name="attr_item_70_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_70_qual" value=""/>
+
+        </span>
+        <span class="sheet-slot2">
+
+         &nbsp;31:&nbsp;<input class="sheet-contents" type="text" name="attr_item_31_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_31_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          71:<input class="sheet-contents"  type="text" name="attr_item_71_desc" value=""/>
+
+           <input class="sheet-quality" type="text" name="attr_item_71_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;32:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_32_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_32_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+         72:<input class="sheet-contents"  type="text" name="attr_item_72_desc" value=""/>
+
+         <input class="sheet-quality" type="text" name="attr_item_72_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;33:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_33_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_33_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          73:<input class="sheet-contents"  type="text" name="attr_item_73_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_73_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;34:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_34_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_34_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          74:<input class="sheet-contents"  type="text" name="attr_item_74_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_74_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;35:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_35_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_35_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          75:<input class="sheet-contents"  type="text" name="attr_item_75_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_75_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;36:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_36_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_36_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          76:<input class="sheet-contents"  type="text" name="attr_item_76_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_76_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;37:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_37_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_37_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          77:<input class="sheet-contents"  type="text" name="attr_item_77_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_77_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;38:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_38_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_38_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          78:<input class="sheet-contents"  type="text" name="attr_item_78_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_78_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          &nbsp;39:&nbsp;<input class="sheet-contents"  type="text" name="attr_item_39_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_39_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          79:<input class="sheet-contents"  type="text" name="attr_item_79_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_79_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          40:<input class="sheet-contents"  type="text" name="attr_item_40_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_40_qual" value=""/>
+
+        </span>
+
+        <span class="sheet-slot2">
+
+          80:<input class="sheet-contents"  type="text" name="attr_item_80_desc" value=""/>
+
+          <input class="sheet-quality" type="text" name="attr_item_80_qual" value=""/>
+
+        </span>
+    </div>
+</div>
+
+ 
+
+
+<div class='sheet-npc'> 
+    <div class="sheet-wrapper">
+
+    <div class="sheet-heading" style="position: absolute;">
+
+        <span>Name:&nbsp;<input type="text" name="attr_character_name" value="Knave"/></span>
+
+       </div>
+
+    <div class="sheet-exp">
+
+        <span style="position: absolute; left: 400px"><span>Level:</span>
+
+        <input class="sheet-wide" type="number" name="attr_levell" value="1" />
+
+        </span>
+
+        <span style="position: absolute; left: 550px"><span>Alignment:</span>
+
+        <input class="sheet-wide" type="text" name="attr_align" value="" />
+
+        </span>
+
+    </div>
+
+    
+    <div class="image-container2">
+    <img src="https://magicandmayhem.org/wp-content/uploads/2024/12/renown.png" alt="Background Image">
+    
+    <!-- Inputs on top of the image -->
+    <div class="input-overlay2" style="top: 54px; left: 54px;">
+        
+        
+    <div class="sheet-hps">
+
+        <label style="position:absolute; left: -20px; top: -30px">Current HP:</label><input type="number" name="attr_hp1" value="1" style="position: absolute; left: 110px; top: -35px"/>
+
+        <label style="position:absolute; left: -20px; top: 8px">Max HP:</label><input type="number" name="attr_maxhp" style="position: absolute; left: 110px; top: 3px" value="@{levell}*4" disabled="true"/>
+        
+        <label style="position:absolute; left: -20px; top: 45px">HP Bonus:</label><input type="number" name="attr_HP_bonus" style="position: absolute; left: 110px; top: 42px" value="0"/>
+       
+
+    </div>
+
+       <div class="sheet-morale">
+
+        <label style="position: absolute; top: 90px; left: 70px">NPC Morale</label>
+
+        <label style="position:absolute; left: -20px; top: 113px">Break:</label><input style="position:absolute; left: 40px; top: 110px" type="number" name="attr_morale" value="7"/>
+
+        <label style="position:absolute; left: 120px; top: 113px">Check:</label><button style="position:absolute; left: 180px; top: 110px" class="sheet-morale-check" type='roll' value='&{template:default} {{name= @{character_name} Morale Break Check}} {{Break if Greater than [[@{morale}+?{modifier|0}]]:=[[2d6]]}}' name='roll_morale'></button></span>
+
+    </div>
+
+ 
+
+    <div class="sheet-armor">
+
+     <label style="position:absolute; left: -20px; top: 160px" class="sheet-armor1">Armor:</label><input style="position:absolute; left: 40px; top: 156px" type="number" name="attr_armorbase" value="10"/></span>
+
+      <label style="position:absolute; left: 120px; top: 160px" class="">Speed: &nbsp;<input style="position:absolute; left: 60px; top: -3px"type="number" name="attr_speed" value="40"/></span>
+
+    </div>
+
+</div>
+</div>
+ 
+
+    <div class="sheet-attacks" style="position: absolute; top: 150px;">
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll" type="number" name="attr_check_bonus" value="0"/>
+
+              <button class="sheet-att-bon" type='roll' style="position: absolute; left: 320px" value='&{template:default} {{name= @{character_name}  @{attack_desc}!}} {{Combat=Melee}}{{to hit=[[1d20+@{check_bonus}]]}}' name='roll_meleeattack'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_desc" value="Checks/Saves"/>
+
+          </span>
+          
+        <span class="sheet-top-break">&nbsp;Melee Weapon&nbsp;&nbsp;&emsp;&emsp;+Attack&emsp;&emsp;&emsp;&emsp;Damage</span>
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll1" type="number" name="attr_melee_bonus1" value="0"/>
+
+              <button class="sheet-att-bon" style="position: absolute; left: 310px" type='roll' value='&{template:default} {{name= @{character_name} attacks with @{attack_1_desc}!}} {{Combat=Melee (level)}}{{to hit=[[1d20+@{melee_bonus1}]]}}' name='roll_meleeattack1'></button>
+
+              <button type='roll' style="position: absolute; left: 410px" value='&{template:default} {{name= @{character_name} hits with @{attack_1_desc}!}} {{Dealing=[[@{attack_1_damage}]] Damage}}' name='roll_attack_1'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_1_desc" value="[2H Weapon Name]"/>
+
+              <input class="sheet-attack-damage" style="position: absolute; left: 350px" type="text" name="attr_attack_1_damage" value="1d8"/>
+
+          </span>
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll2" type="number" name="attr_melee_bonus2" value="0"/>
+
+              <button class="sheet-att-bon" style="position: absolute; left: 310px" type='roll' value='&{template:default} {{name= @{character_name} attacks with @{attack_2_desc}!}} {{Combat=Melee (level)}}{{to hit=[[1d20+@{melee_bonus2}]]}}' name='roll_meleeattack2'></button>
+
+              <button type='roll' style="position: absolute; left: 410px" value='&{template:default} {{name= @{character_name} hits with @{attack_2_desc}!}} {{Dealing=[[@{attack_2_damage}]] Damage}}' name='roll_attack_2'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_2_desc" value="[1H Weapon Name]"/>
+
+              <input class="sheet-attack-damage" style="position: absolute; left: 350px" type="text" name="attr_attack_2_damage" value="1d6"/>
+
+          </span>
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll3" type="number" name="attr_melee_bonus3" value="0"/>
+
+              <button class="sheet-att-bon" style="position: absolute; left: 310px" type='roll' value='&{template:default} {{name= @{character_name} attacks with @{attack_3_desc}!}} {{Combat=Melee (level)}}{{to hit=[[1d20+@{melee_bonus3}]]}}' name='roll_meleeattack3'></button>
+
+              <button type='roll' style="position: absolute; left: 410px" value='&{template:default} {{name= @{character_name} hits with @{attack_3_desc}!}} {{Dealing=[[@{attack_3_damage}]] Damage}}' name='roll_attack_3'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_3_desc" value="Punch/Kick"/>
+
+              <input class="sheet-attack-damage" style="position: absolute; left: 350px" type="text" name="attr_attack_3_damage" value="1d2"/>
+
+          </span>
+
+          <span class="sheet-top-break">&nbsp;Ranged Weapon&emsp;&emsp;&emsp;&emsp;&emsp;+Attack&emsp;&emsp;&emsp;&emsp;Damage </span>
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll4" type="number" name="attr_ranged_bonus4" value="0"/>
+
+              <button class="sheet-att-bon2" style="position: absolute; left: 310px" type='roll' value='&{template:default} {{name= @{character_name} attacks with @{attack_4_desc}!}} {{Combat=Ranged (level)}}{{to hit=[[1d20+@{ranged_bonus4}]]}}' name='roll_rangedattack4'></button>
+
+              <button type='roll' style="position: absolute; left: 410px" value='&{template:default} {{name= @{character_name} hits with @{attack_4_desc}!}} {{Dealing=[[@{attack_4_damage}]] Damage}}' name='roll_attack_4'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_4_desc" value="[2H Ranged Weapon Name]"/>
+
+              <input class="sheet-attack-damage" style="position: absolute; left: 350px" type="text" name="attr_attack_4_damage" value="1d6"/>
+
+          </span>
+
+        <span class="sheet-attack-slot">
+
+              <input class="sheet-attack-roll5" type="number" name="attr_ranged_bonus5" value="0"/>
+
+              <button class="sheet-att-bon2" style="position: absolute; left: 310px" type='roll' value='&{template:default} {{name= @{character_name} attacks with @{attack_5_desc}!}} {{Combat=Ranged (level)}}{{to hit=[[1d20+@{ranged_bonus5}]]}}' name='roll_rangedattack5'></button>
+
+              <button type='roll' style="position: absolute; left: 410px" value='&{template:default} {{name= @{character_name} hits with @{attack_5_desc}!}} {{Dealing=[[@{attack_5_damage}]] Damage}}' name='roll_attack_5'></button>
+
+              <input class="sheet-attack-descr" type="text" name="attr_attack_5_desc" value="[1H Ranged Weapon Name]"/>
+
+              <input class="sheet-attack-damage" style="position: absolute; left: 350px" type="text" name="attr_attack_5_damage" value="1d4"/>
+
+          </span>
+
+ 
+
+    </div>
+
+    <div class="sheet-notes">
+
+        Notes / Background
+
+        <textarea name="attr_notes"></textarea>
+
+    </div>
+
+</div>
+
+ 
+
+ 
+
+<script type="text/worker">
+
+    on("change:armorbase change:hashelm change:hasshield sheet:opened", function() {
+
+                   getAttrs(["armorbase","hashelm","hasshield"], function(values) {
+
+            let base = parseInt(values.armorbase)||10;
+
+            let helm = parseInt(values.hashelm)||0;
+
+            let shield = parseInt(values.hasshield)||0;
+
+            let ac = base + helm + shield;
+
+                                  setAttrs({
+
+                                      'actotal': ac
+
+                                  })
+
+                   })
+
+               })
+
+</script>
+
+ 
+</div>
+
+<script type="text/worker">
+    const buttonlist = ["character","journal","npc"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>
